@@ -20,5 +20,22 @@ function addBook() {
     newBook = new Book(title, author, pages);
     console.log(newBook);
     library.push(newBook);
+   //saveData()
     document.forms[0].reset();
 };
+
+function getBook() {
+    
+}
+
+function createBook() {
+    let display = document.querySelector('.library');
+    let bookBox = document.createElement('div');
+    let titleBox = document.createElement('div');
+    let authorBox = document.createElement('div');
+    let pagesBox = document.createElement('div');
+}
+
+// function saveData() {
+//     localStorage.setItem(`library`, JSON.stringify(library));
+// };
