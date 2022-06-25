@@ -25,17 +25,34 @@ function addBook() {
 };
 
 function getBook() {
-    
-}
+    for (i = 0; i < library.length; i++) {
+        createBook(library[i]);
+    }
+};
 
-function createBook() {
+function createBook(book) {
     let display = document.querySelector('.library');
     let bookBox = document.createElement('div');
     let titleBox = document.createElement('div');
     let authorBox = document.createElement('div');
     let pagesBox = document.createElement('div');
+
+
 }
 
 // function saveData() {
 //     localStorage.setItem(`library`, JSON.stringify(library));
 // };
+
+// Add book form
+let bookForm = document.querySelector('.bookForm');
+let addBtn = document.querySelector('.add');
+let closeBtn = document.querySelector('.close');
+
+addBtn.onclick = () => {
+    bookForm.style.display = 'block';
+}
+
+closeBtn.onclick = () => {
+    bookForm.style.display = 'none';
+}
