@@ -2,6 +2,8 @@ let library = [];
 let newBook;
 let subBtn = document.querySelector('#sub');
 
+window.onload = retrieve();
+
 subBtn.addEventListener('click', (e) => {
     e.preventDefault();
     addBook();
@@ -24,7 +26,7 @@ function addBook() {
     newBook = new Book(title, author, pages, read);
     console.log(read)
     library.push(newBook);
-   //saveData()
+    saveData()
     document.forms[0].reset();
 };
 
@@ -46,6 +48,7 @@ function createBook(book) {
     let pagesBox = document.createElement('div');
     let readBox = document.createElement('div');
     let remove = document.createElement('button');
+    let readBtn = document.createElement('button');
     
     bookBox.classList.add('book');
     bookBox.setAttribute('id', library.indexOf(book));
@@ -62,14 +65,30 @@ function createBook(book) {
     pagesBox.innerHTML = book.pages;
     bookBox.appendChild(pagesBox);
 
+    readBtn.classList.add('readCheck');
     readBox.classList.add('read');
     if(book.read === true) {
-        pagesBox.innerHTML = 'Read'
+        pagesBox.innerText = 'Read'
+        readBtn.innerText = 'Mark As Unread';
+        readBtn.addEventListener('click', () => {
+            book.read = false;
+            saveData();
+            getLibrary();
+        })
     }
     else {
         pagesBox.innerHTML = 'Not Read'
+        readBtn.innerText = 'Mark As Read';
+        readBtn.addEventListener('click', () => {
+            book.read = true;
+            saveData();
+            getLibrary();
+        })
     };
+
     bookBox.appendChild(readBox);
+    bookBox.appendChild(readBtn);
+    
     
     remove.classList.add('remove'); 
     remove.innerText = 'Remove';
@@ -86,6 +105,18 @@ function createBook(book) {
 function saveData() {
      localStorage.setItem(`library`, JSON.stringify(library));
 };
+
+function retrieve() {
+    if(!localStorage.library) {
+        getLibrary();
+    }
+    else {
+        let obj = localStorage.getItem('library');
+        obj = JSON.parse(obj);
+        library = obj;
+        getLibrary();
+    }
+}
 
 // Book form
 let bookForm = document.querySelector('.bookForm');
