@@ -24,7 +24,6 @@ function addBook() {
     let pages = document.querySelector('#pages').value;
     let read = document.querySelector('#read').checked;
     newBook = new Book(title, author, pages, read);
-    console.log(read)
     library.push(newBook);
     saveData()
     document.forms[0].reset();
