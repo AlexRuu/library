@@ -1,3 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Rubik&display=swap');
+
+* {
+    font-family: Rubik, Arial, Helvetica, sans-serif;
+    background-color: #F5F5DC;
+}
+
+#headTitle {
+    font-family: Lobster, Rubik, Arial, Helvetica, sans-serif;
+    font-size: 5rem;
+    margin-bottom: 0;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.add {
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+    border: solid black;
+}
+
 .bookForm {
     display: none;
     z-index: 1;
@@ -8,7 +35,7 @@
     left: 0;
     top: 0;
     overflow: auto;
-    background-color: rgb(0, 0, 0, 0.4)
+    background-color: rgb(0, 0, 0, 0.3);
 }
 
 .addForm {
@@ -24,6 +51,8 @@
     -webkit-animation-duration: 1s;
     animation-name: animate;
     animation-duration: 1s;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 @-webkit-keyframes animate {
@@ -36,27 +65,52 @@
     to {opacity: 1}
 }
 
-.close {
+.formTitle {
     display: flex;
-    justify-content: right;
-    font-size: 26px;
-    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    width: 100%;
 }
 
-.addForm input, .readBox{
+.formT {
+    font-size: 1.2rem;
+}
+
+.close {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+}
+
+.close:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.addForm input {
     width: 10rem;
     align-self: center;
+    padding: 10px;
 }
 
 .readBox {
     font-size: 1.2rem;
     font-weight: bold;
     display: flex;
+    align-self: center;
+    width: 11.5rem;
 }
 
 #sub {
     display: flex;
     justify-content: center;
     align-self: center;
-    width: 10rem;
+    width: 11.5rem;
+}
+
+#sub:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
 }
