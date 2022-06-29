@@ -130,3 +130,8 @@ closeForm.onclick = () => {
     bookForm.style.display = 'none';
 };
 
+window.onclick = (e) => {
+    if (e.target == bookForm) {
+        bookForm.style.display = 'none';
+    };
+};
