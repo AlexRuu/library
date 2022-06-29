@@ -1,11 +1,25 @@
 .bookForm {
+    display: none;
     z-index: 1;
     position: fixed;
-    display: none;
     width: 100%;
     height: 100%;
+    padding-top: 5rem; /* Location of the box */
+    left: 0;
+    top: 0;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.add-form {
-    display: grid;
+.addForm {
+    display: flex;
+    flex-direction: column;
+    width: 13rem;
+    gap: 10px;
+    justify-content: center;
+}
+
+.close {
+    display: flex;
+    justify-content: right;
 }
