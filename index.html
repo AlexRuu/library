@@ -8,12 +8,18 @@
     <title>Library</title>
 </head>
 <body>
-    <div class="addbook">
-        <button class="add">Add New Book</button>
+    <div class="heading">
+        <h1 id="headTitle">My Book List</h1>
+        <div class="addbook">
+            <button class="add">Add New Book</button>
+        </div>
     </div>
     <div class="bookForm">
         <form class="addForm">
-            <div class="close">&times;</div>
+            <div class="formTitle">
+                <p class="formT">Add New Book</p>
+                <div class="close">&times;</div>
+            </div>
             <input type="text" name="title" id="title" placeholder="Title">
             <input type="text" name="author" id="author" placeholder="Author">
             <input type="number" name="pages" min="0" id="pages" placeholder="Number of Pages">
