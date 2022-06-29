@@ -18,6 +18,8 @@
     width: 13rem;
     gap: 10px;
     margin: auto;
+    padding: 10px 10px 30px 10px;
+    border: black solid;
     -webkit-animation-name: animate;
     -webkit-animation-duration: 1s;
     animation-name: animate;
@@ -39,4 +41,22 @@
     justify-content: right;
     font-size: 26px;
     font-weight: bold;
+}
+
+.addForm input, .readBox{
+    width: 10rem;
+    align-self: center;
+}
+
+.readBox {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+}
+
+#sub {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 10rem;
 }
