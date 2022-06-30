@@ -57,7 +57,7 @@ function createBook(book) {
     bookBox.appendChild(titleBox);
 
     authorBox.classList.add('author');
-    authorBox.innerHTML = book.author;
+    authorBox.innerHTML = `By: ${book.author}`;
     bookBox.appendChild(authorBox);
     
     pagesBox.classList.add('read');
@@ -67,7 +67,7 @@ function createBook(book) {
     readBtn.classList.add('readCheck');
     readBox.classList.add('read');
     if(book.read === true) {
-        pagesBox.innerText = 'Read'
+        pagesBox.innerText = 'Status: Read'
         readBtn.innerText = 'Mark As Unread';
         readBtn.addEventListener('click', () => {
             book.read = false;
@@ -76,7 +76,7 @@ function createBook(book) {
         })
     }
     else {
-        pagesBox.innerHTML = 'Not Read'
+        pagesBox.innerHTML = 'Status: Not Read'
         readBtn.innerText = 'Mark As Read';
         readBtn.addEventListener('click', () => {
             book.read = true;
