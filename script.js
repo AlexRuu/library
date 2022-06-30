@@ -46,6 +46,7 @@ function createBook(book) {
     let authorBox = document.createElement('div');
     let pagesBox = document.createElement('div');
     let readBox = document.createElement('div');
+    let iconBox = document.createElement('div');
     let remove = document.createElement('button');
     let readBtn = document.createElement('button');
     
@@ -60,15 +61,15 @@ function createBook(book) {
     authorBox.innerHTML = `By: ${book.author}`;
     bookBox.appendChild(authorBox);
     
-    pagesBox.classList.add('read');
+    pagesBox.classList.add('pages');
     pagesBox.innerHTML = book.pages;
     bookBox.appendChild(pagesBox);
 
     readBtn.classList.add('readCheck');
     readBox.classList.add('read');
     if(book.read === true) {
-        pagesBox.innerText = 'Status: Read'
-        readBtn.innerText = 'Mark As Unread';
+        readBox.innerText = 'Status: Read'
+        readBtn.innerHTML = '<i id="notRead" class="material-symbols-outlined">menu_book</i>';
         readBtn.addEventListener('click', () => {
             book.read = false;
             saveData();
@@ -76,8 +77,8 @@ function createBook(book) {
         })
     }
     else {
-        pagesBox.innerHTML = 'Status: Not Read'
-        readBtn.innerText = 'Mark As Read';
+        readBox.innerHTML = 'Status: Not Read'
+        readBtn.innerHTML = '<i id="didRead" class="material-symbols-outlined">done</i>';
         readBtn.addEventListener('click', () => {
             book.read = true;
             saveData();
@@ -86,12 +87,13 @@ function createBook(book) {
     };
 
     bookBox.appendChild(readBox);
-    bookBox.appendChild(readBtn);
     
+    iconBox.appendChild(readBtn)
+    iconBox.appendChild(remove)
     
     remove.classList.add('remove'); 
-    remove.innerText = 'Remove';
-    bookBox.appendChild(remove);
+    remove.innerHTML = '<i id="trash" class="material-symbols-outlined">delete</i>';
+    bookBox.appendChild(iconBox);
     display.appendChild(bookBox);
 
     remove.addEventListener('click', () => {
