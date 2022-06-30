@@ -142,3 +142,33 @@
     align-items: center;
     border: black solid;
 }
+
+.remove, .readCheck {
+    border: none;
+}
+
+#trash {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 700,
+  'GRAD' 200,
+  'opsz' 100;
+}
+
+#trash:hover {
+    cursor: pointer;
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 700,
+    'GRAD' 100,
+    'opsz' 48;
+}
+
+#didRead:hover, #notRead:hover {
+    cursor: pointer;
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 700,
+    'GRAD' 200,
+    'opsz' 100;
+}
