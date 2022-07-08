@@ -11,12 +11,14 @@ subBtn.addEventListener('click', (e) => {
     bookForm.style.display = 'none';
 });
 
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages + ' pages'
-    this.read = read
-};
+class Book {
+    constructor (title, author, pages, read) {
+        this.title = title
+        this.author = author
+        this.pages = pages + ' pages'
+        this.read = read
+    };
+}
 
 function addBook() {
     let title = document.querySelector('#title').value;
